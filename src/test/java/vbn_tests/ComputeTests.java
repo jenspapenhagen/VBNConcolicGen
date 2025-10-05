@@ -1,17 +1,24 @@
 package vbn_tests;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 import vbn.state.GlobalState;
 import vbn.state.constraints.BinaryConstraint;
 import vbn.state.constraints.BinaryOperand;
 import vbn.state.constraints.CustomOperand;
 import vbn.state.constraints.IConstraint;
 import vbn.state.helpers.ComputeConstraints;
-import vbn.state.value.*;
+import vbn.state.value.BooleanConstant;
+import vbn.state.value.BooleanSymbol;
+import vbn.state.value.ISymbol;
+import vbn.state.value.IntConstant;
+import vbn.state.value.IntSymbol;
+import vbn.state.value.Value;
 
 import java.util.Stack;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class ComputeTests {
 
@@ -127,6 +134,7 @@ public class ComputeTests {
         assertEquals(groundTruth.right.getType(), ((BinaryConstraint) finalConstraint).right.getType());
         assertEquals(groundTruth.right.getValue(), ((BinaryConstraint) finalConstraint).right.getValue());
     }
+
     @Test
     public void testBinaryConstraintBooleanIntMix_BoolThenInt() {
         GlobalState state = new GlobalState();

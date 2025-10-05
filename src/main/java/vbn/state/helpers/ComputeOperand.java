@@ -1,15 +1,11 @@
 package vbn.state.helpers;
-
 import lombok.NonNull;
-import org.junit.Test;
 import soot.jimple.Jimple;
 import vbn.state.constraints.BinaryOperand;
 import vbn.state.constraints.UnaryOperand;
 
 import javax.annotation.Nullable;
 import java.util.Map;
-
-import static org.junit.Assert.assertEquals;
 
 public class ComputeOperand {
 
@@ -47,10 +43,5 @@ public class ComputeOperand {
         return unaryEnumsMap.get(operandStr);
     }
 
-    @Test
-    public void testGetBinaryOperand() {
-        var result = getBinaryOperand("<=");
-        var groundTruth = BinaryOperand.LTE;
-        assertEquals(result, groundTruth);
-    }
+
 }

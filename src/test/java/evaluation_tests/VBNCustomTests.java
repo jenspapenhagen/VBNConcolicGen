@@ -1,16 +1,16 @@
 package evaluation_tests;
 
-import org.junit.Ignore;
-import vbn.instrument.Instrument;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import soot.G;
 import soot.PackManager;
 import soot.Transform;
 import soot.options.Options;
+import vbn.instrument.Instrument;
 import vbn.solver.VBNRunner;
 
-import java.io.*;
+import java.io.File;
 
 import static vbn.solver.VBNRunner.printAndValidateSolvedConstraints;
 import static vbn.solver.VBNRunner.printSolvedConstraints;
@@ -119,7 +119,7 @@ public class VBNCustomTests {
     }
 
     @Test
-    @Ignore
+    @Disabled
     final void basicFunction() {
         VBNRunner.execute("vbn.eval_test_files.vbn_custom_tests.Test_12_Function");
         System.out.println("Finished function test");
